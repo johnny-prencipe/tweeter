@@ -1,0 +1,16 @@
+header {
+  height: 400px;
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edc28e;
+  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+}
+
+.name {
+  align-self: flex-start;
+}
