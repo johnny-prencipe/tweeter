@@ -1,12 +1,17 @@
 .nav-bar {
-  font-family: "Bungee", cursive;
-  color: #FFFFFF; /* ?? */
-  background-color: #4056A1; /* ?? */
-  font-size: 24px; /* ?? */
+  color: #FFFFFF;
+  background-color: #4056A1;
+  font-size: 24px;
   height: 120px;
+  padding: 1.5em;
 }
 
 .inner-content {
-  padding: 1.5em;
   float: left;
+  font-family: 'Bungee', cursive;
+}
+
+.new-tweet-prompt {
+  float: right;
+  font-family: 'Source Sans Pro', sans-serif;
 }
