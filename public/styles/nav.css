@@ -1,0 +1,12 @@
+.nav-bar {
+  font-family: "Bungee", cursive;
+  color: #FFFFFF; /* ?? */
+  background-color: #4056A1; /* ?? */
+  font-size: 24px; /* ?? */
+  height: 120px;
+}
+
+.inner-content {
+  padding: 1.5em;
+  float: left;
+}
