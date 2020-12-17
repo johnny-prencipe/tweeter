@@ -14,3 +14,7 @@ header {
 .name {
   align-self: flex-start;
 }
+
+article.header {
+  border: 10px;
+}
