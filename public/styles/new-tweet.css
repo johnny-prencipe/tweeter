@@ -1,3 +1,5 @@
+/* New tweet */
+
 .new-tweet {
   justify-content: center;
   align-items: center;
@@ -51,4 +53,44 @@ footer div {
 
 .counter {
   font-family: 'Bungee', sans-serif;
+}
+
+/* Existing tweets: */
+section.tweet-container {
+  width: 100%;
+}
+
+article {
+  border: 3px solid #333;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+header.tweet {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.user-image {
+  width: 30px;
+  height: 30px;
+}
+
+header div.userID {
+  color: transparent; 
+}
+
+footer.tweet {
+  border-top: 3px solid #333;
+  font-size: 50%
+}
+
+article.tweet:hover {
+  text-shadow: 2px 2px #CCC;
+  box-shadow: 5px 10px #888;
+}
+
+header div.userID:hover {
+  color: #CCC;
 }

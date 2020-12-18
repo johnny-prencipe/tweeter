@@ -1,4 +1,5 @@
-header {
+html header.flex-container {
+  margin-top: 100px;
   height: 400px;
   width: 100%;
 }
