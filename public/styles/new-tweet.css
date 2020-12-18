@@ -1,0 +1,54 @@
+.new-tweet {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.new-tweet h2 {
+  font-weight: 900
+}
+
+.new-tweet label {
+  margin: auto;
+  font-weight: 700;
+}
+
+#tweet-text {
+  display: flex;
+  align-items: center;
+  margin: 1;
+  border: none;
+  background: none;
+  height: 35px;
+  width: 100%;
+  border-bottom: 4px solid #333;
+}
+
+#tweet-text:focus {
+  outline: 0;
+}
+
+footer { 
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-button {
+  color: white;
+  background: #4056A1;
+  border: 0;
+  font-family: 'Bungee', sans-serif;
+}
+
+.tweet-button:hover {
+  background: darkblue
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
