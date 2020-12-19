@@ -8,23 +8,31 @@ $(document).ready(function() {
 
   console.log('Document ready');
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  }
+
+  // Driver code for tweet data //
+
+  // const tweetData = {
+  //   "user": {
+  //     "name": "Newton",
+  //     "avatars": "https://i.imgur.com/73hZDYK.png",
+  //     "handle": "@SirIsaac"
+  //     },
+  //   "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //   "created_at": 1461116232227
+  // }
+
+  // Render the tweets on the page //
 
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       $("#tweet-container").prepend(createTweetElement(tweet));
     }
   }
+
+
+  // Create a new tweet element //
 
   function createTweetElement(tweet) {
     const $newTweet = `
@@ -42,26 +50,41 @@ $(document).ready(function() {
     return $newTweet;
   }
 
+  // Submit tweet from form to the database //
 
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
+    const tweet = $(this).serialize();
+    console.log(tweet);
+    if (tweet.length > 140) {
+      return alert('error: too many characters');
+    }
+    console.log(tweet.length);
+    if (tweet.length === 5) {
+      return alert('error: tweet field empty');
+    }
+    
     $.ajax({
       url: '/tweets',
       type: 'POST',
-      data: $(this).serialize()
+      data: tweet
     }).then(console.log('Post made'));
   });
 
-  function newTweet(event) {
-    // event.preventDefault();
-    // $('new-tweet form').on('submit', function(event) {
-    //   console.log('asd');
-    // });
-
-
-    const tweetText = $('.new-tweet form #tweet-text').val();
+  // Load tweets from the database //
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log('tweets loaded:', data)
+        renderTweets(data);
+      }
+    })
   }
 
+  loadTweets();
 
   const $tweet = createTweetElement(tweetData);
 
