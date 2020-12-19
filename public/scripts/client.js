@@ -46,10 +46,26 @@ $(document).ready(function() {
     </header>
     ${tweet.content.text}
     <footer class="tweet">${tweet.created_at}</footer>
-    `;  
+    `;
     return $newTweet;
   }
 
+  // Load tweets from the database //
+  const loadTweets = function() {
+    $('#tweet-text').val('');
+    $('.counter').val('140');
+    $.ajax({
+      url: '/tweets',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log('tweets loaded:', data)
+        renderTweets(data);
+      }
+    })
+  }
+
+  loadTweets();
   // Submit tweet from form to the database //
 
   $('.tweet-form').on('submit', function(event) {
@@ -68,23 +84,9 @@ $(document).ready(function() {
       url: '/tweets',
       type: 'POST',
       data: tweet
-    }).then(console.log('Post made'));
+    }).then(loadTweets);
   });
 
-  // Load tweets from the database //
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      type: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        console.log('tweets loaded:', data)
-        renderTweets(data);
-      }
-    })
-  }
-
-  loadTweets();
 
   const $tweet = createTweetElement(tweetData);
 
