@@ -23,12 +23,12 @@
     <!-- New tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    
     <!-- Char counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
@@ -60,7 +60,7 @@
         
         <h2>Compose Tweet</h2>
 
-        <form method="POST" action="/tweets/">
+        <form method="POST" action="/tweets" class="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
 
