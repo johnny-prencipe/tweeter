@@ -35,6 +35,21 @@ body {
   flex-direction: column;
 }
 
+#err-too-long {
+  border: 3px solid red;
+  background: white;
+  color: red;
+  border-spacing: 10px;
+}
+
+#err-too-short {
+  border: 3px solid red;
+  background: white;
+  color: red;
+  border-spacing: 10px;
+}
+
+
 form {
   width: 100%;
 }

@@ -6,24 +6,17 @@
 
 $(document).ready(function() {
 
+  $('#err-too-long').hide();
+  $('#err-too-short').hide();
   console.log('Document ready');
 
+  // Escape function to protect against XSS vulnerability //
 
-  // Driver code for tweet data //
-
-  // const tweetData = {
-  //   "user": {
-  //     "name": "Newton",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png",
-  //     "handle": "@SirIsaac"
-  //     },
-  //   "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //   "created_at": 1461116232227
-  // }
-
-  // Render the tweets on the page //
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -44,13 +37,14 @@ $(document).ready(function() {
       </div>
       <div class="userID">${tweet.user.handle}</div>
     </header>
-    ${tweet.content.text}
+    ${escape(tweet.content.text)}
     <footer class="tweet">${tweet.created_at}</footer>
     `;
     return $newTweet;
   }
 
   // Load tweets from the database //
+
   const loadTweets = function() {
     $('#tweet-text').val('');
     $('.counter').val('140');
@@ -66,6 +60,7 @@ $(document).ready(function() {
   }
 
   loadTweets();
+
   // Submit tweet from form to the database //
 
   $('.tweet-form').on('submit', function(event) {
@@ -73,13 +68,14 @@ $(document).ready(function() {
     const tweet = $(this).serialize();
     console.log(tweet);
     if (tweet.length > 140) {
-      return alert('error: too many characters');
+      return ($('#err-too-long').slideDown());
     }
     console.log(tweet.length);
     if (tweet.length === 5) {
-      return alert('error: tweet field empty');
+      return ($('#err-too-short').slideDown());
     }
-    
+    $('#err-too-long').slideUp()
+    $('#err-too-short').slideUp()
     $.ajax({
       url: '/tweets',
       type: 'POST',
