@@ -67,6 +67,10 @@ article {
   padding-right: 3px;
 }
 
+article.tweet {
+  margin-top: 3px;
+}
+
 header.tweet {
   display: flex;
   justify-content: space-between;

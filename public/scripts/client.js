@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   function createTweetElement(tweet) {
     const $newTweet = `
-
+  <article class="tweet">
     <header class="tweet">
       <div class="display-name">
         <img src="${tweet.user.avatars}" class="user-image"></img>
@@ -39,6 +39,7 @@ $(document).ready(function() {
     </header>
     ${escape(tweet.content.text)}
     <footer class="tweet">${tweet.created_at}</footer>
+  </article>
     `;
     return $newTweet;
   }
