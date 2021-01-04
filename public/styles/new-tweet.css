@@ -99,3 +99,10 @@ article.tweet:hover {
 header div.userID:hover {
   color: #CCC;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 768px) {
+  nav{
+    opacity: 0;
+  }
+}
