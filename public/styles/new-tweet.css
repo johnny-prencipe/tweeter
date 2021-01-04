@@ -100,9 +100,20 @@ header div.userID:hover {
   color: #CCC;
 }
 
+
+
 /* Desktop styles */
 @media only screen and (min-width: 768px) {
-  nav{
-    opacity: 0;
+  html header.flex-container {
+    display: flex;
+    width: 40%;
+    height: 5%;
   }
+  main.container {
+    display: flex;
+    width: 55%;
+    padding-left: 5%;
+  }
+
 }
+

@@ -18,3 +18,11 @@ nav {
   float: right;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+@media only screen and (max-width: 767px) {
+  nav {
+    background-color: transparent;
+    color: #666;
+    position: absolute;
+  }
+}

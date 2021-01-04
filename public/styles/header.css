@@ -1,15 +1,17 @@
-html header.flex-container {
+/* html header.flex-container {
   margin-top: 100px;
   height: 400px;
   width: 100%;
-}
+} */
+
+
 
 .flex-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #b39341;
-  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+  background-color: #d68000;
+  background-image: url("https://www.transparenttextures.com/patterns/connected.png");
 }
 
 .name {
