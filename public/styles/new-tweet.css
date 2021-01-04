@@ -105,12 +105,11 @@ header div.userID:hover {
 /* Desktop styles */
 @media only screen and (min-width: 768px) {
   html header.flex-container {
-    display: flex;
+    padding-top: 10%;
     width: 40%;
     height: 5%;
   }
   main.container {
-    display: flex;
     width: 55%;
     padding-left: 5%;
   }

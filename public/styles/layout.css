@@ -16,12 +16,19 @@ html {
  */
 
 body {
-  display: flex;
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+  }
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
