@@ -17,7 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 
-##Screenshots
+## Screenshots
 
 !['Screenshot of the mobile site'](https://github.com/johnny-prencipe/tweeter/blob/master/public/docs/mobile.png)
 !['Screenshot of the desktop site'](https://github.com/johnny-prencipe/tweeter/blob/master/public/docs/desktop.png)
