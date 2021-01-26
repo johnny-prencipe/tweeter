@@ -3,12 +3,10 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(document).ready(function() {
 
   $('#err-too-long').hide();
   $('#err-too-short').hide();
-  console.log('Document ready');
 
   // Escape function to protect against XSS vulnerability //
 
@@ -43,7 +41,7 @@ $(document).ready(function() {
 
       ${escape(tweet.content.text)}
 
-      <footer class="tweet">${new Date(tweet.created_at)}
+      <footer class="tweet">${moment(tweet.created_at).fromNow()}
         <div class="font-awesome">
           <i class="far fa-flag"></i>
           <i class="fas fa-retweet"></i>
@@ -56,6 +54,9 @@ $(document).ready(function() {
     return $newTweet;
   }
 
+  // Slide tweet submitter up/down //
+  $('.tweeter-hider').on('click', function(event) {});
+
   // Load tweets from database //
 
   const loadTweets = function() {
@@ -66,7 +67,6 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'json',
       success: function(data) {
-        console.log('tweets loaded:', data)
         renderTweets(data);
       }
     })
@@ -81,11 +81,9 @@ $(document).ready(function() {
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
     const tweet = $(this).serialize();
-    console.log(tweet);
     if (tweet.length > 140) {
       return ($('#err-too-long').slideDown());
     }
-    console.log(tweet.length);
     if (tweet.length === 5) {
       return ($('#err-too-short').slideDown());
     }

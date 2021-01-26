@@ -30,6 +30,10 @@
   outline: 0;
 }
 
+.red {
+  color: red;
+}
+
 footer { 
   padding-top: 15px;
   padding-bottom: 15px;
@@ -72,6 +76,7 @@ article {
   padding-left: 3px;
   padding-right: 3px;
   margin-top: 3px;
+  word-wrap: normal;
 }
 
 header.tweet {
@@ -111,7 +116,7 @@ article:hover > footer div.font-awesome {
     width: 40%;
     height: 5%;
   }
-  
+
   main.container {
     width: 55%;
     padding-left: 5%;

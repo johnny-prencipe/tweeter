@@ -5,7 +5,7 @@ $(document).ready(function() {
       $counter.val(140 - length);
 
       $counter.val() < 0 ?
-      $counter.css({ color: 'red' }) :
-      $counter.css({ color: '#333' });
+      $counter.addClass('red') :
+      $counter.removeClass('red');
   });
 });
