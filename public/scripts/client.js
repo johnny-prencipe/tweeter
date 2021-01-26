@@ -18,6 +18,8 @@ $(document).ready(function() {
     return div.innerHTML;
   }
 
+  // Render existing tweets on page //
+
   const renderTweets = function(tweets) {
     $("#tweet-container").empty();
     for (let tweet of tweets) {
