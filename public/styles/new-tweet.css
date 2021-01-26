@@ -65,9 +65,6 @@ article {
   border: 3px solid #333;
   padding-left: 3px;
   padding-right: 3px;
-}
-
-article.tweet {
   margin-top: 3px;
 }
 
@@ -91,13 +88,9 @@ footer.tweet {
   font-size: 50%
 }
 
-article.tweet:hover {
+article:hover {
   text-shadow: 2px 2px #CCC;
   box-shadow: 5px 10px #888;
-}
-
-header div.userID:hover {
-  color: #CCC;
 }
 
 

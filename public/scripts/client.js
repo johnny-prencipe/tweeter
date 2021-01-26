@@ -19,26 +19,28 @@ $(document).ready(function() {
   }
 
   const renderTweets = function(tweets) {
+    $("#tweet-container").empty();
     for (let tweet of tweets) {
       $("#tweet-container").prepend(createTweetElement(tweet));
     }
   }
-
 
   // Create a new tweet element //
 
   function createTweetElement(tweet) {
     const $newTweet = `
 
-    <header class="tweet">
-      <div class="display-name">
-        <img src="${tweet.user.avatars}" class="user-image"></img>
-        ${tweet.user.name}
-      </div>
-      <div class="userID">${tweet.user.handle}</div>
-    </header>
-    ${escape(tweet.content.text)}
-    <footer class="tweet">${tweet.created_at}</footer>
+    <article>
+      <header class="tweet">
+        <div class="display-name">
+          <img src="${tweet.user.avatars}" class="user-image"></img>
+          ${tweet.user.name}
+        </div>
+        <div class="userID">${tweet.user.handle}</div>
+      </header>
+      ${escape(tweet.content.text)}
+      <footer class="tweet">${new Date(tweet.created_at)}</footer>
+    </article>
     `;
     return $newTweet;
   }
@@ -59,6 +61,9 @@ $(document).ready(function() {
     })
   }
 
+  // Call the loadTweets function on page load //
+
+  loadTweets();
 
   // Submit tweet from form to the database //
 
@@ -81,6 +86,4 @@ $(document).ready(function() {
       data: tweet
     }).then(loadTweets);
   });
-
-  loadTweets();
 });
