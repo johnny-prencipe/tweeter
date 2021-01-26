@@ -1,5 +1,4 @@
 /* New tweet */
-
 .new-tweet {
   justify-content: center;
   align-items: center;
@@ -37,10 +36,17 @@ footer {
 }
 
 footer div {
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
+  justify-items: space-between;
 }
 
+footer div.font-awesome {
+  float: right;
+  text-align: right;
+  opacity: 0%;
+}
+
+/* Tweet button */
 .tweet-button {
   color: white;
   background: #4056A1;
@@ -88,12 +94,15 @@ footer.tweet {
   font-size: 50%
 }
 
+/* Hover effects */
 article:hover {
   text-shadow: 2px 2px #CCC;
   box-shadow: 5px 10px #888;
 }
 
-
+article:hover > footer div.font-awesome {
+  opacity: 100%;
+}
 
 /* Desktop styles */
 @media only screen and (min-width: 768px) {
@@ -106,6 +115,5 @@ article:hover {
     width: 55%;
     padding-left: 5%;
   }
-
 }
 

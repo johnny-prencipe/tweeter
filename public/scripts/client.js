@@ -29,8 +29,8 @@ $(document).ready(function() {
 
   function createTweetElement(tweet) {
     const $newTweet = `
-
     <article>
+    
       <header class="tweet">
         <div class="display-name">
           <img src="${tweet.user.avatars}" class="user-image"></img>
@@ -38,14 +38,23 @@ $(document).ready(function() {
         </div>
         <div class="userID">${tweet.user.handle}</div>
       </header>
+
       ${escape(tweet.content.text)}
-      <footer class="tweet">${new Date(tweet.created_at)}</footer>
+
+      <footer class="tweet">${new Date(tweet.created_at)}
+        <div class="font-awesome">
+          <i class="far fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="far fa-heart"></i>
+        </div>
+      </footer>
+
     </article>
     `;
     return $newTweet;
   }
 
-  // Load tweets from the database //
+  // Load tweets from database //
 
   const loadTweets = function() {
     $('#tweet-text').val('');
@@ -65,7 +74,7 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Submit tweet from form to the database //
+  // Submit tweet from form to database //
 
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
