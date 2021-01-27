@@ -54,9 +54,6 @@ $(document).ready(function() {
     return $newTweet;
   }
 
-  // Slide tweet submitter up/down //
-  $('.tweeter-hider').on('click', function(event) {});
-
   // Load tweets from database //
 
   const loadTweets = function() {
